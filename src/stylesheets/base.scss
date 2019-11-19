@@ -1,0 +1,81 @@
+@import "modules/color";
+@import "modules/typography";
+@import "modules/media";
+
+
+html {
+  font-size: 90%;
+  scroll-behavior: smooth !important;
+
+  @media only screen and (max-width: $media--desktop) {
+    font-size: 75%;
+  }
+
+  @media only screen and (max-width: $media--tablet) {
+    font-size: 62.5%;
+  }
+}
+
+
+body {
+  @include typography($font-family--text, $font-size--regular);
+
+  overflow-y: scroll;
+
+  color: $color--text;
+  background-color: $color--background;
+}
+
+
+strong {
+  font-weight: bold;
+}
+
+
+small {
+  @include typography($font-family--text, $font-size--small)
+}
+
+
+td:first-child {
+  padding: 0.125rem 1rem;
+}
+
+
+td {
+  padding: 0.125rem 0.25rem;
+
+  @media only screen and (max-width: $media--desktop) {
+    display: block;
+    padding-left: 2rem;
+  }
+}
+
+
+a {
+  color: $color--black;
+  text-decoration: inherit;
+
+
+  &:hover {
+    color: $color--primary;
+    text-decoration: inherit;
+    cursor: pointer;
+  }
+}
+
+
+code {
+  @include typography($font-family--code, $font-size--small);
+  line-height: 0;
+}
+
+
+p:not(:last-child) {
+  margin-bottom: leading($font-size--regular);
+}
+
+
+.weak-device {
+  //background-color: red !important;
+}
