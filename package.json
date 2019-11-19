@@ -3,8 +3,7 @@
   "scripts": {
     "build": "gatsby build",
     "serve": "gatsby develop",
-    "prepack": "npm run build",
-    "publish": "gh-pages -d public master"
+    "publish": "npm run build && gh-pages -d public master"
   },
   "dependencies": {
     "gatsby": "2.17.11",
