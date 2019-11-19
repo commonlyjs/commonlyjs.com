@@ -31,6 +31,7 @@ export default () =>
             <p>description</p>
             {members.map((member) =>
               <Snippet
+                key={member.name}
                 name={member.name}
                 since={member.since}
                 description={member.description}

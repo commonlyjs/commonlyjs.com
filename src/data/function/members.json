@@ -33,7 +33,7 @@
       }
     },
     "examples": [
-      "import { identity } from \"@commonly/function\"\r\r identity(2)     // -> 2"
+      "import { identity } from \"@commonly/function\"\r\ridentity(2)     // -> 2"
     ]
   }
 ]

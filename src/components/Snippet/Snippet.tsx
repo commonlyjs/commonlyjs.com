@@ -1,5 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
+import Prism from "prismjs";
+
 
 
 
@@ -41,14 +43,13 @@ Snippet.propTypes = {
   since: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   signature: PropTypes.object.isRequired,
-  examples: PropTypes.string.isRequired,
+  examples: PropTypes.arrayOf(PropTypes.string).isRequired,
   metadata: PropTypes.object.isRequired,
   pkg: PropTypes.object.isRequired
 }
 
 
 function Snippet({ name, since, description, signature, examples, metadata, pkg }: Props) {
-  console.log(pkg)
   return (
     <div id={name} className="card snippet">
       <div className="header">
@@ -61,32 +62,35 @@ function Snippet({ name, since, description, signature, examples, metadata, pkg 
         <div className="content">
           <h3 className="header">Parameters</h3>
           <table>
-            {signature.parameters.map((parameter) =>
-              <tr>
-                <td><code><strong>{parameter.name}: {parameter.type}</strong></code></td>
-                <td><small>{parameter.description}</small></td>
-              </tr>
-            )}
+            <tbody>
+              {signature.parameters.map((parameter) =>
+                <tr key={parameter.name}>
+                  <td><code><strong>{parameter.name}: {parameter.type}</strong></code></td>
+                  <td><small>{parameter.description}</small></td>
+                </tr>
+              )}
+            </tbody>
           </table>
           <p><small><strong>Returns</strong> ({signature.returnValue.type}) {signature.returnValue.description}</small></p>
 
           <h3 className="header">Metadata</h3>
           <table>
-            <tr>
-              <td><small><strong>version</strong></small></td>
-              <td><small>v{pkg.version}</small></td>
-            </tr>
-            <tr>
-              <td><small><strong>since</strong></small></td>
-              <td><small>v{since}</small></td>
-            </tr>
+            <tbody>
+              <tr>
+                <td><small><strong>version</strong></small></td>
+                <td><small>v{pkg.version}</small></td>
+              </tr>
+              <tr>
+                <td><small><strong>since</strong></small></td>
+                <td><small>v{since}</small></td>
+              </tr>
+            </tbody>
           </table>
         </div>
       </div>
       {examples.map((example) =>
-        <pre className="example"><code>
-          {example}
-        </code></pre>
+        <pre key={example} className="example language-typescript"><code
+            dangerouslySetInnerHTML={{ __html: Prism.highlight(example, Prism.languages.javascript, "javascript") }}/></pre>
       )}
     </div>
   )

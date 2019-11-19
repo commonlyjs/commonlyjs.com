@@ -31,7 +31,7 @@ function Section({ name, items }: Props) {
         </div>
         <div className="menu">
           {items.map((item) => (
-            <a className="item"
+            <a key={item} className="item"
                href={`#${item}`}
                onClick={handleClick}
             >
