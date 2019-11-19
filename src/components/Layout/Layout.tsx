@@ -23,7 +23,7 @@ function Layout({ children }: Props) {
   return (
     <>
       <Helmet
-        title={"title"}
+        title={"Commonly - A modern utility library for JavaScript/TypeScript."}
       />
       <Navbar/>
       {children}

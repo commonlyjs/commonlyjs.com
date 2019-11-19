@@ -48,6 +48,7 @@ Snippet.propTypes = {
 
 
 function Snippet({ name, since, description, signature, examples, metadata, pkg }: Props) {
+  console.log(pkg)
   return (
     <div id={name} className="card snippet">
       <div className="header">

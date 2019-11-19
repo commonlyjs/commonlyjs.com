@@ -5,8 +5,8 @@ import Section from "../components/Drawer/Section/Section"
 
 import Layout from "../components/Layout/Layout"
 import Snippet from "../components/Snippet/Snippet"
-import * as members from "../data/function/members.json"
-import * as pkg from "../data/function/package.json"
+import members from "../data/function/members.json"
+import pkg from "../data/function/package.json"
 
 
 
@@ -27,7 +27,7 @@ export default () =>
         </Drawer>
         <div className="column">
           <div className="container">
-            <h1 className="header">@commonly/function</h1>
+            <h1 className="header">{pkg.name}</h1>
             <p>description</p>
             {members.map((member) =>
               <Snippet

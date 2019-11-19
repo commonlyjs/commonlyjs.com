@@ -5,14 +5,11 @@ import React from "react"
 function Navbar() {
   return (
     <div className="navbar">
-      <a className="title item active" href="#">
+      <a className="title item" href="#">
         Commonly
       </a>
 
-      <a className="item" href="#">
-        Documentation
-      </a>
-      <a className="item" href="#">
+      <a className="item active" href="#">
         API Reference
       </a>
 
