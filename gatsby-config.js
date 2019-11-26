@@ -9,19 +9,38 @@ module.exports = {
         `gatsby-plugin-sass`,
         `gatsby-plugin-react-helmet`,
         {
+            resolve: `gatsby-transformer-remark`,
+            options: {
+                plugins: [
+                    {
+                        resolve: `gatsby-remark-images`,
+                        options: {
+                            // It's important to specify the maxWidth (in pixels) of
+                            // the content container as this plugin uses this as the
+                            // base for generating different widths of each image.
+                            maxWidth: 590,
+                        },
+                    },
+                    {
+                        resolve: `gatsby-remark-prismjs`,
+                    },
+                ],
+            },
+        },
+        {
             resolve: `gatsby-source-filesystem`,
             options: {
                 name: `images`,
                 path: `${__dirname}/src/images`
             }
         },
-        `gatsby-transformer-sharp`,
-        `gatsby-plugin-sharp`,
         {
-            resolve: `gatsby-transformer-remark`,
+            resolve: `gatsby-source-filesystem`,
             options: {
-                showLineNumbers: true
+                name: `articles`,
+                path: `${__dirname}/src/articles`
             }
-        }
+        },
+        `gatsby-transformer-sharp`,
     ]
 }

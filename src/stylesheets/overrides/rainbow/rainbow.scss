@@ -3,6 +3,12 @@
 
 
 pre {
+  opacity: 1 !important;
+  word-wrap: break-word;
+  padding: 1rem 3rem;
+  color: #ccc;
+  background: $color--navy300;
+
   .keyword {
     font-weight: 600;
     color: #E6725C;

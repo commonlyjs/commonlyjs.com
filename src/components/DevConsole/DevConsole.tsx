@@ -17,6 +17,7 @@ function DevConsole({}: Props) {
     <div
       id="devconsole"
       className="devconsole"
+      style={{ display: "none" }}
     >
       Not initialized
     </div>
