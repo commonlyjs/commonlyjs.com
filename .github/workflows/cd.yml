@@ -32,6 +32,6 @@ jobs:
           git config --global user.email "build@commonlyjs.com"
       - name: Publish to GitHub pages
         run: |
-          npm run publish --if-present
+          npm run publish --if-present -- --repo "https://${{github.actor}}:${{secrets.GITHUB_TOKEN}}@github.com/${{github.repository}}.git"
         env:
           GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
