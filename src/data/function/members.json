@@ -4,7 +4,7 @@
     "since": "0.0.0",
     "description": "An identity function always returns the same value that was used as its argument.",
     "remarks": [
-      "None."
+
     ],
     "metadata": {
       "source": "http://github.com/commonlyjs/commonly/blob/master/packages/function/identity/identity.ts",
