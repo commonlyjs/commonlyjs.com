@@ -26,12 +26,11 @@ jobs:
       - name: Install dependencies
         run: |
           npm ci
-          npm run bootstrap --if-present
       - name: Configure Git machine user
         run: |
           git config --global user.name "commonly buildbot"
           git config --global user.email "build@commonlyjs.com"
-      - name: Publish to npm artifactory
+      - name: Publish to GitHub pages
         run: |
           npm run publish --if-present
         env:
