@@ -1,0 +1,38 @@
+name: CD
+
+
+on:
+  push:
+    branches:
+      - source
+
+
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    env:
+      CI: true
+
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v1
+      - name: Install Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          registry-url: https://registry.npmjs.org/
+      - name: Install dependencies
+        run: |
+          npm ci
+          npm run bootstrap --if-present
+      - name: Configure Git machine user
+        run: |
+          git config --global user.name "commonly buildbot"
+          git config --global user.email "build@commonlyjs.com"
+      - name: Publish to npm artifactory
+        run: |
+          npm run publish --if-present
+        env:
+          GH_TOKEN: ${{secrets.GITHUB_TOKEN}}

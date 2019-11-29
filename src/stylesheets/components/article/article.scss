@@ -51,6 +51,9 @@
 
 
   pre {
+    @include typography($font-family--code, $font-size--small);
+
+    line-height: $typography--perfect-fifth-ratio;
     overflow: auto;
     box-shadow: inset 3px 3px 10px -5px rgba(0, 0, 0, 0.5);
   }

@@ -1,12 +1,14 @@
 ---
 title:  Map, filter and reduce, the functional way
 date: 2019-01-01
+level: 0
 path: "/articles/map-filter-reduce"
 ---
 
 # What's all the fuss about?
 
-As you all may know, functional style of programming has gotten really a lot of attention lately. It's happening for several reasons, but the most highlighted one by the community is one of the bigger flaws of OOP design.
+As you all may know, functional style of programming has gotten really a lot of attention lately. 
+It's happening for several reasons, some of them are supposedly flaws in the object-oriented paradigm highlighted by the programming community.
 
 > Because the problem with object-oriented languages is they’ve got all this implicit environment that they carry around with them.
 > You wanted a banana but what you got was a gorilla holding the banana and the entire jungle.
@@ -14,11 +16,11 @@ As you all may know, functional style of programming has gotten really a lot of 
 > <cite>Joe Armstrong, creator of Erlang, on software reusability.</cite>
 
 JavaScript happens to support both paradigms (to an extent).
-That's why the community seems to be so divided, there's this search for a golden hammer for everything.
+That's why the community seems to be so divided, as there's this grand pursuit for the holy grail of programming.
 
-Believe me or not, but every tool is different and not everything have to be a nail.
+Every tool is different and I believe in that not everything have to be a nail.
 In this article we're going to talk about three basic functional tools available natively in ES5.
-Knowing those will get you programming skills to the next level!
+Learning those will help you on with your programming journey.
 
 
 # Array.prototype.map
@@ -273,7 +275,6 @@ console.log(`The innkeeper can give you ${ offer } gold coins for your equipment
 Today we learned a basic set of tools that we can use for writing our JavaScript code in a more functional manner, how awesome is that?! 
 But before going out replacing all of the loops in your current project with our just met trio, we need to see the whole picture.  
 
-It's time to put our metal to test!
 
 ## Example
 Sir. Whinealot is not a type of knight who's fooling around. He just embarked on a demon-slaying adventure.   
