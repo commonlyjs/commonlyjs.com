@@ -33,6 +33,6 @@ jobs:
       - name: Publish to GitHub pages
         run: |
           npm run publish --if-present
-          git push "https://${{github.actor}}:${{secrets.GITHUB_TOKEN}}@github.com/${{github.repository}}.git" HEAD:${{github.ref}} --follow-tags
+          git push "https://${{github.actor}}:${{secrets.GITHUB_TOKEN}}@github.com/${{github.repository}}.git" HEAD:ref/head/master --follow-tags
         env:
           GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
