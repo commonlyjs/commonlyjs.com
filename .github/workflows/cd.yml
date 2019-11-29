@@ -2,10 +2,10 @@ name: CD
 
 
 on:
-  - repository_dispatch
-  - push:
-      branches:
-        - source
+  repository_dispatch
+  push:
+    branches:
+      - source
 
 
 
