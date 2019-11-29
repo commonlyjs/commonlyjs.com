@@ -2,7 +2,7 @@ name: CD
 
 
 on:
-  repository_dispatch
+  repository_dispatch: true
   push:
     branches:
       - source
