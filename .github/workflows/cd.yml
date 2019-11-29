@@ -1,11 +1,7 @@
 name: CD
 
 
-on:
-  repository_dispatch
-  push:
-    branches:
-      - source
+on: [repository_dispatch, push]
 
 
 
