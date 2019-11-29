@@ -5,7 +5,7 @@ on: repository_dispatch
 
 
 jobs:
-  release:
+  hooktest:
     runs-on: ubuntu-latest
 
     env:
