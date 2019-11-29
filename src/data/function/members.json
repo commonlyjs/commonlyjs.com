@@ -1,6 +1,6 @@
 [
   {
-    "name": "identity",
+    "name": "identity_test",
     "since": "0.0.0",
     "description": "An identity function always returns the same value that was used as its argument.",
     "remarks": [
