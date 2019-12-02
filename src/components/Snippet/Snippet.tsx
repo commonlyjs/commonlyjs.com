@@ -1,6 +1,6 @@
-import React, { useEffect } from "react"
+import React from "react"
 import PropTypes from "prop-types"
-import Prism from "prismjs";
+import Prism from "prismjs"
 
 
 
@@ -50,9 +50,6 @@ Snippet.propTypes = {
 
 
 function Snippet({ name, since, description, signature, examples, metadata, pkg }: Props) {
-  useEffect(() => {
-    Prism.highlightAll()
-  })
   return (
     <div id={name} className="card snippet">
       <div className="header">
@@ -92,8 +89,8 @@ function Snippet({ name, since, description, signature, examples, metadata, pkg 
         </div>
       </div>
       {examples.map((example) =>
-          <pre key={example} className="example language-typescript">
-            <code>{example}</code>
+          <pre key={example} className="example language-javascript">
+            <code>{Prism.highlight(example, Prism.languages.javascript, "javascript")}</code>
           </pre>
       )}
     </div>

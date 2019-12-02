@@ -8,9 +8,7 @@ import pkg from "../data/api/reflect/package.json"
 
 
 
-export default (props: any) => {
-    console.log(props)
-
+export default () => {
     return <Layout>
         <div className="layout">
             <div className="row">
