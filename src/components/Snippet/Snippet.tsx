@@ -7,30 +7,30 @@ import Prism from "prismjs";
 
 export interface Props {
   name: string
-  since: string
-  description: string
+  since: null | string
+  description: null | string
   examples: string[]
   signature: {
     typeparameters: {
-      name: string
+      name: null | string
       description: null | string
       defaultValue: null | string
       extends: null | string
     }[]
     parameters: {
       name: string
-      type: string
+      type: null | string
       description: null | string
       defaultValue: null | string
     }[]
     returnValue: {
-      type: string
+      type: null | string
       description: null | string
     }
   },
   metadata: {
-    source: string,
-    specification: string
+    source: null | string,
+    specification: null | string
   },
   pkg: {
     name: string,
