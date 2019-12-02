@@ -27,6 +27,13 @@ jobs:
         run: |
           git config --global user.name "commonly buildbot"
           git config --global user.email "build@commonlyjs.com"
-      - name: Publish to GitHub pages
+      - name: gh-pages
+        uses: peaceiris/actions-gh-pages@v2.5.0
+        env:
+          ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          PUBLISH_BRANCH: master
+          PUBLISH_DIR: ./public
+          SCRIPT_MODE: true
         run: |
-          npm run publish --if-present -- --repo "https://${{secrets.GH_PAGES_TOKEN}}:${{secrets.GITHUB_TOKEN}}@github.com/${{github.repository}}.git"
+          wget https://raw.githubusercontent.com/peaceiris/actions-gh-pages/v2.5.0/entrypoint.sh
+          bash ./entrypoint.sh
