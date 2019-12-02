@@ -4,7 +4,7 @@
     "build": "gatsby build",
     "serve": "gatsby develop",
     "serv2e": "gh-pages --help",
-    "publish": "npm run build && gh-pages --dist public --branch master --dotfiles --add"
+    "publish": "npm run build && gh-pages --dist public --branch master --add"
   },
   "dependencies": {
     "@mdx-js/mdx": "1.5.1",
