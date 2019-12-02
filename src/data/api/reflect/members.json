@@ -1,0 +1,28 @@
+[
+  {
+    "name": "isUndefined",
+    "since": "1.0.0",
+    "remarks": [],
+    "signature": {
+      "parameters": [
+        {
+          "name": "value",
+          "description": "is a value to check"
+        }
+      ],
+      "typeparameters": [],
+      "returnValue": {
+        "type": null,
+        "description": "a boolean whether the value is an undefined or not"
+      }
+    },
+    "examples": [
+      "import { isUndefined } from \"@commonly/reflect\"\r\risUndefined(undefined)   //-> true\risUndefined(null)        //-> false\r"
+    ],
+    "metadata": {
+      "source": null,
+      "specification": null
+    },
+    "description": "Check if a given value is\r\nan {@link https://developer.mozilla.org/en-US/docs/Glossary/undefined | undefined}."
+  }
+]
