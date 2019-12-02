@@ -3,7 +3,6 @@
   "scripts": {
     "build": "gatsby build",
     "serve": "gatsby develop",
-    "serv2e": "gh-pages --help",
     "publish": "npm run build && gh-pages --dist public --branch master --add"
   },
   "dependencies": {
