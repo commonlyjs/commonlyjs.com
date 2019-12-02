@@ -9,7 +9,7 @@ export default () =>
             <div className="row">
                 <div className="column">
                     <div className="container">
-                        <h1>Home!</h1>
+                        <h1>Home?</h1>
                     </div>
                 </div>
             </div>
