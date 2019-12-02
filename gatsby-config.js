@@ -45,7 +45,7 @@ module.exports = {
         {
             resolve: 'gatsby-source-apiserver',
             options: {
-                url: "https://commonlyjs.com/commonly/reflect/members.json",
+                url: "https://commonlyjs.com/commonly/packages/reflect/members.json",
                 method: "get",
                 headers: {
                     "Content-Type": "application/json"
@@ -59,7 +59,7 @@ module.exports = {
         {
             resolve: 'gatsby-source-apiserver',
             options: {
-                url: "https://commonlyjs.com/commonly/reflect/package.json",
+                url: "https://commonlyjs.com/commonly/packages/reflect/package.json",
                 method: "get",
                 headers: {
                     "Content-Type": "application/json"
