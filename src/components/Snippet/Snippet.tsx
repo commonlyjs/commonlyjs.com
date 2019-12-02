@@ -89,8 +89,8 @@ function Snippet({ name, since, description, signature, examples, metadata, pkg 
         </div>
       </div>
       {examples.map((example) =>
-        <pre key={example} className="example"
-             dangerouslySetInnerHTML={{ __html: Prism.highlight(example, Prism.languages.javascript, "javascript") }}/>
+        <pre key={example} className="example language-typescript"><code
+            dangerouslySetInnerHTML={{ __html: Prism.highlight(example, Prism.languages.javascript, "javascript") }}/></pre>
       )}
     </div>
   )
