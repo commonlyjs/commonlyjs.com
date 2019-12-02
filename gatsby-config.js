@@ -42,5 +42,74 @@ module.exports = {
             }
         },
         `gatsby-transformer-sharp`,
+        {
+            resolve: 'gatsby-source-apiserver',
+            options: {
+                url: "https://commonlyjs.com/commonly/reflect/members.json",
+                method: "get",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                name: "members",
+                localSave: true,
+                skipCreateNode: true,
+                path: `${__dirname}/src/data/api/reflect/`,
+            }
+        },
+        {
+            resolve: 'gatsby-source-apiserver',
+            options: {
+                url: "https://commonlyjs.com/commonly/reflect/package.json",
+                method: "get",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                name: "package",
+                localSave: true,
+                skipCreateNode: true,
+                path: `${__dirname}/src/data/api/reflect/`,
+            }
+        },
+
+        // {
+        //     resolve: `gatsby-plugin-json-output`,
+        //     options: {
+        //         siteUrl: `https://commonlyjs.com/commonly/reflect/members.json`,
+        //         graphQLQuery: `
+        //             {
+        //               allMarkdownRemark(limit: 1000) {
+        //                 edges {
+        //                   node {
+        //                     excerpt
+        //                     html
+        //                     fields { path }
+        //                     frontmatter {
+        //                       title
+        //                       created
+        //                       updated
+        //                     }
+        //                   }
+        //                 }
+        //               }
+        //             }
+        //           `
+        //     }
+        // }
+        // {
+        //     resolve: "gatsby-source-graphql",
+        //     options: {
+        //         typeName: "RMAPI",
+        //         fieldName: "rickAndMorty",
+        //         url: "https://rickandmortyapi-gql.now.sh/",
+        //     },
+        // },
+        // {
+        //     resolve: "gatsby-source-graphql",
+        //     options: {
+        //         typeName: "REFLECTPACKAGEAPI",
+        //         fieldName: "reflectMembers",
+        //         url: "https://commonlyjs.com/commonly/reflect/package.json",
+        //     },
+        // },
     ]
 }

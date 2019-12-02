@@ -3,13 +3,15 @@ import Drawer from "../components/Drawer/Drawer"
 import Section from "../components/Drawer/Section/Section"
 import Layout from "../components/Layout/Layout"
 import Snippet from "../components/Snippet/Snippet"
-import members from "../data/function/members.json"
-import pkg from "../data/function/package.json"
+import members from "../data/api/reflect/members.json"
+import pkg from "../data/api/reflect/package.json"
 
 
 
-export default () =>
-    <Layout>
+export default (props: any) => {
+    console.log(props)
+
+    return <Layout>
         <div className="layout">
             <div className="row">
                 <Drawer>
@@ -43,3 +45,4 @@ export default () =>
             </div>
         </div>
     </Layout>
+}
