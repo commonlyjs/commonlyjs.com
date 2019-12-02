@@ -24,7 +24,7 @@ jobs:
         run: |
           git config --global user.name "commonly buildbot"
           git config --global user.email "build@commonlyjs.com"
-      - name: build
+      - name: Build static website
         run: |
           npm run build
       - name: Deploy to GitHub Pages
