@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import PropTypes from "prop-types"
 import Prism from "prismjs";
 
@@ -50,6 +50,9 @@ Snippet.propTypes = {
 
 
 function Snippet({ name, since, description, signature, examples, metadata, pkg }: Props) {
+  useEffect(() => {
+    Prism.highlightAll()
+  })
   return (
     <div id={name} className="card snippet">
       <div className="header">
