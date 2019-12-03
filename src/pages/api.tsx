@@ -21,7 +21,7 @@ export default () => {
                 <div className="column">
                     <div className="container">
                         <h1 className="header">{reflectPkg.name}</h1>
-                        <p>{reflectPkg.name}</p>
+                        <p>{reflectPkg.description}</p>
                         {reflectMembers.map((member) =>
                             <Snippet
                                 key={member.name}
