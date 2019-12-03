@@ -90,6 +90,7 @@
     display: block;
     overflow-x: auto;
     overflow-y: auto;
+    max-width: calc(100vw - 1.75rem * 2 * 2);
     min-height: min-content;
     margin-top: 3rem;
 

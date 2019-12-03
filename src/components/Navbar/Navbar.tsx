@@ -3,9 +3,7 @@ import React, { useEffect, useRef } from "react"
 
 
 export interface Props {
-    items: {
 
-    }[]
 }
 
 

@@ -1,11 +1,13 @@
 @import "../../modules/typography";
 @import "../../modules/color";
+@import "../../modules/media";
 
 
 
 .navbar {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: flex-start;
 
   margin-bottom: 1.5rem;
@@ -28,6 +30,9 @@
       font-size: $font-size--large;
       margin-right: 2.5rem;
       color: $color--primary;
+      @media only screen and (max-width: $media--tablet) {
+        flex-basis: 100%;
+      }
     }
 
 
