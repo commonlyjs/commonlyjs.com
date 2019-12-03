@@ -39,7 +39,7 @@ small {
 
 h1:not([class]) {
   @include typography($font-family--heading, $font-size--xx-large);
-  padding-top: leading($font-size--xx-large);
+  padding-top: leading($font-size--x-large);
   padding-bottom: 1rem;
   margin-left: -$font-size--xx-large * 0.25;
   color: darken($color--primary, pow($typography--ratio, 1) * 1%);
@@ -48,7 +48,7 @@ h1:not([class]) {
 
 h2:not([class]) {
   @include typography($font-family--heading, $font-size--x-large);
-  padding-top: leading($font-size--x-large);
+  padding-top: leading($font-size--large);
   padding-bottom: 1rem;
   margin-left: -$font-size--x-large * 0.25;
   color: darken($color--primary, pow($typography--ratio, 2) * 2%);
@@ -57,7 +57,7 @@ h2:not([class]) {
 
 h3:not([class]) {
   @include typography($font-family--heading, $font-size--large);
-  padding-top: leading($font-size--large);
+  padding-top: leading($font-size--regular);
   padding-bottom: 1rem;
   margin-left: -$font-size--large * 0.25;
   color: darken($color--primary, pow($typography--ratio, 3) * 3%);
@@ -66,7 +66,7 @@ h3:not([class]) {
 
 h4:not([class]) {
   @include typography($font-family--heading, $font-size--regular);
-  padding-top: leading($font-size--large);
+  padding-top: leading($font-size--small);
   padding-bottom: 1rem;
   margin-left: -$font-size--large * 0.25;
   color: $color--text;
@@ -75,7 +75,7 @@ h4:not([class]) {
 
 h5:not([class]) {
   @include typography($font-family--heading, $font-size--regular);
-  padding-top: leading($font-size--large);
+  padding-top: leading($font-size--x-small);
   margin-left: -$font-size--large * 0.25;
   color: $color--text;
 }
