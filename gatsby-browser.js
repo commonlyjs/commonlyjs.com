@@ -8,5 +8,7 @@
 
 
 exports.onClientEntry = () => {
-    document.removeEventListener('DOMContentLoaded', window.Prism.highlightAll)
+    if (window.Prism) {
+        document.removeEventListener('DOMContentLoaded', window.Prism.highlightAll)
+    }
 }
