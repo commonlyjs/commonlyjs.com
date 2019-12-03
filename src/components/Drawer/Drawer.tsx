@@ -1,4 +1,4 @@
-import React, { ReactChild, ReactNode } from "react"
+import React, { ReactChild, ReactNode, useRef, useState } from "react"
 import PropTypes from "prop-types"
 
 
@@ -13,9 +13,19 @@ Drawer.propTypes = {
 
 
 function Drawer({ children }: Props) {
+  const ref = useRef<HTMLDivElement>(null)
+
+  const handleClick = () => {
+    const element = ref.current
+    if (element) {
+      element.classList.toggle("opened")
+      element.classList.toggle("closed")
+    }
+  }
+
   return (
     <>
-      <div className="column static mobile-hidden drawer">
+      <div ref={ref} className="column static mobile-hidden drawer">
         <div className="sticky">
           <div className="card drawer-content" tabIndex={0}>
             <div className="header">
@@ -46,6 +56,25 @@ function Drawer({ children }: Props) {
             </div>
           </div>
         </div>
+      </div>
+      <div className="fab">
+        <button className="action" tabIndex={-1}
+          onClick={handleClick}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg"
+               width="24"
+               height="24"
+               viewBox="0 0 24 24"
+               fill="none"
+               stroke="currentColor"
+               stroke-width="2"
+               stroke-linecap="round"
+               stroke-linejoin="round"
+               className="feather feather-search">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
       </div>
     </>
   )
