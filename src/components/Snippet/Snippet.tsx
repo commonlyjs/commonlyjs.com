@@ -48,33 +48,34 @@ Snippet.propTypes = {
 
 
 function Snippet({ name, since, description, signature, examples, metadata, pkg }: Props) {
+    const descriptionTransformed = (description || "")
+        .replace(/\{@link (.*)\}/, (g1, g2) => {
+            const [url, name] = g2.split(" | ")
+            return `<a href="${url}">${name}</a>`
+        })
+
     return (
         <div id={name} className="card snippet">
             <div className="header">
                 <div className="title">{name}</div>
             </div>
             <div className="content">
-                <p>{description}</p>
+                <p dangerouslySetInnerHTML={{ __html: descriptionTransformed }} />
             </div>
             <div className="collapsible">
                 <div className="content">
                     <h3 className="header">Parameters</h3>
                     <table>
                         <tbody>
-                        {signature.parameters.map((parameter) => {
-                                const [url, name] = (parameter.description || "")
-                                    .replace(/\{@link (.*)\}/, (g1, g2) => g2)
-                                    .split(" | ")
-
-                                return <tr key={parameter.name}>
-                                    <td><code><strong>{parameter.name}: {parameter.type}</strong></code></td>
-                                    <td>
-                                        <small>
-                                            <a href={url}>{name}</a>
-                                        </small>
-                                    </td>
-                                </tr>
-                            }
+                        {signature.parameters.map((parameter) =>
+                            <tr key={parameter.name}>
+                                <td><code><strong>{parameter.name}: {parameter.type}</strong></code></td>
+                                <td>
+                                    <small>
+                                        {parameter.description}
+                                    </small>
+                                </td>
+                            </tr>
                         )}
                         </tbody>
                     </table>
