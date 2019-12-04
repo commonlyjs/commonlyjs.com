@@ -100,6 +100,36 @@ module.exports = {
             }
         },
 
+        {
+            resolve: 'gatsby-source-apiserver',
+            options: {
+                url: "https://commonlyjs.com/commonly/packages/math/members.json",
+                method: "get",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                name: "members",
+                localSave: true,
+                skipCreateNode: true,
+                path: `${__dirname}/src/data/api/math/`,
+            }
+        },
+        {
+            resolve: 'gatsby-source-apiserver',
+            options: {
+                url: "https://commonlyjs.com/commonly/packages/math/package.json",
+                method: "get",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                name: "package",
+                localSave: true,
+                skipCreateNode: true,
+                path: `${__dirname}/src/data/api/math/`,
+            }
+        },
+
+
         // {
         //     resolve: `gatsby-plugin-json-output`,
         //     options: {
