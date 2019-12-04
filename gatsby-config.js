@@ -71,6 +71,35 @@ module.exports = {
             }
         },
 
+        {
+            resolve: 'gatsby-source-apiserver',
+            options: {
+                url: "https://commonlyjs.com/commonly/packages/type/members.json",
+                method: "get",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                name: "members",
+                localSave: true,
+                skipCreateNode: true,
+                path: `${__dirname}/src/data/api/type/`,
+            }
+        },
+        {
+            resolve: 'gatsby-source-apiserver',
+            options: {
+                url: "https://commonlyjs.com/commonly/packages/type/package.json",
+                method: "get",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                name: "package",
+                localSave: true,
+                skipCreateNode: true,
+                path: `${__dirname}/src/data/api/type/`,
+            }
+        },
+
         // {
         //     resolve: `gatsby-plugin-json-output`,
         //     options: {

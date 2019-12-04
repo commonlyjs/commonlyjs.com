@@ -1,7 +1,7 @@
 {
-  "name": "@commonly/reflect",
-  "version": "0.1.0-next.14",
-  "description": "Collection of reflection utilities.",
+  "name": "@commonly/type",
+  "version": "0.1.0-next.12",
+  "description": "Collection of utility types.",
   "main": "./index.js",
   "types": "./index.d.ts",
   "scripts": {
@@ -29,6 +29,6 @@
   "license": "MIT",
   "keywords": [
     "commonly",
-    "reflect"
+    "type"
   ]
 }

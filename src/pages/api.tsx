@@ -5,6 +5,8 @@ import Layout from "../components/Layout/Layout"
 import Snippet from "../components/Snippet/Snippet"
 import reflectMembers from "../data/api/reflect/members.json"
 import reflectPkg from "../data/api/reflect/package.json"
+import typeMembers from "../data/api/type/members.json"
+import typePkg from "../data/api/type/package.json"
 
 
 
@@ -17,12 +19,30 @@ export default () => {
                         name={reflectPkg.name}
                         items={reflectMembers.map(member => member.name)}
                     />
+                    <Section
+                        name={typePkg.name}
+                        items={typeMembers.map(member => member.name)}
+                    />
                 </Drawer>
                 <div className="column">
                     <div className="container">
                         <h1 className="header">{reflectPkg.name}</h1>
                         <p>{reflectPkg.description}</p>
                         {reflectMembers.map((member) =>
+                            <Snippet
+                                key={member.name}
+                                name={member.name}
+                                since={member.since}
+                                description={member.description}
+                                signature={member.signature}
+                                examples={member.examples}
+                                metadata={member.metadata}
+                                pkg={reflectPkg}
+                            />
+                        )}
+                        <h1 className="header">{typePkg.name}</h1>
+                        <p>{typePkg.description}</p>
+                        {typeMembers.map((member) =>
                             <Snippet
                                 key={member.name}
                                 name={member.name}

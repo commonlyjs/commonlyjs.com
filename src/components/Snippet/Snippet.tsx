@@ -49,7 +49,7 @@ Snippet.propTypes = {
 
 function Snippet({ name, since, description, signature, examples, metadata, pkg }: Props) {
     const descriptionTransformed = (description || "")
-        .replace(/\{@link (.*)\}/, (g1, g2) => {
+        .replace(/\{@link (.*)\}/g, (g1, g2) => {
             const [url, name] = g2.split(" | ")
             return `<a href="${url}">${name}</a>`
         })
@@ -64,22 +64,24 @@ function Snippet({ name, since, description, signature, examples, metadata, pkg 
             </div>
             <div className="collapsible">
                 <div className="content">
-                    <h3 className="header">Parameters</h3>
-                    <table>
-                        <tbody>
-                        {signature.parameters.map((parameter) =>
-                            <tr key={parameter.name}>
-                                <td><code><strong>{parameter.name}: {parameter.type}</strong></code></td>
-                                <td>
-                                    <small>
-                                        {parameter.description}
-                                    </small>
-                                </td>
-                            </tr>
-                        )}
-                        </tbody>
-                    </table>
-                    <p><small><strong>Returns</strong> <code>({signature.returnValue.type})</code> {signature.returnValue.description}</small></p>
+                    {!!signature.parameters.length && <>
+                        <h3 className="header">Parameters</h3>
+                        <table>
+                            <tbody>
+                            {signature.parameters.map((parameter) =>
+                                <tr key={parameter.name}>
+                                    <td><code><strong>{parameter.name}: {parameter.type}</strong></code></td>
+                                    <td>
+                                        <small>
+                                            {parameter.description}
+                                        </small>
+                                    </td>
+                                </tr>
+                            )}
+                            </tbody>
+                        </table>
+                        <p><small><strong>Returns</strong> <code>({signature.returnValue.type})</code> {signature.returnValue.description}</small></p>
+                    </>}
 
                     <h3 className="header">Metadata</h3>
                     <table>
