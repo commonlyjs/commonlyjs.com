@@ -59,6 +59,10 @@ function Snippet({ name, since, description, signature, examples, metadata, pkg 
             }
         })
 
+    if (!!signature.parameters.length) {
+        name = `${name}(${signature.parameters.map(parameter => parameter.name).join()})`
+    }
+
     return (
         <div id={name} className="card snippet">
             <div className="header">
