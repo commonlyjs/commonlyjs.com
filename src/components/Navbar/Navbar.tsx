@@ -29,15 +29,12 @@ function Navbar({}: Props) {
                 Commonly
             </a>
 
-            <a className="item" href="/">
-                Home
-            </a>
             <a className="item" href="/api/">
                 API Reference
             </a>
-            <a className="item" href="/articles/map-filter-reduce/">
-                Articles
-            </a>
+            {/*<a className="item" href="/articles/map-filter-reduce/">*/}
+            {/*    Articles*/}
+            {/*</a>*/}
 
             <div className="separator"/>
             <a className="item" href="https://github.com/commonlyjs/commonly">
