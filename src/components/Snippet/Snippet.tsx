@@ -51,7 +51,12 @@ function Snippet({ name, since, description, signature, examples, metadata, pkg 
     const descriptionTransformed = (description || "")
         .replace(/\{@link (.*)\}/g, (g1, g2) => {
             const [url, name] = g2.split(" | ")
-            return `<a href="${url}">${name}</a>`
+            if (/^http(s?):\/\//.test(url)) {
+                return `<a href="${url}">${name}</a>`
+            } else {
+                const [_, member] = url.split(":")
+                return `<a href="#${member}">${name}</a>`
+            }
         })
 
     return (
