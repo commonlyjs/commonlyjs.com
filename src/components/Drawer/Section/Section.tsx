@@ -32,7 +32,7 @@ function Section({ name, items }: Props) {
         <div className="menu">
           {items.map((item) => (
             <a key={item} className="item"
-               href={`#${name}-${item}`}
+               href={`#${name.split("/")[1]}-${item}`}
                onClick={handleClick}
             >
               {item}
