@@ -31,6 +31,7 @@ export default () => {
                         {reflectMembers.map((member) =>
                             <Snippet
                                 key={member.name}
+                                pkgName={reflectPkg.name}
                                 name={member.name}
                                 since={member.since}
                                 description={member.description}
@@ -45,6 +46,7 @@ export default () => {
                         {typeMembers.map((member) =>
                             <Snippet
                                 key={member.name}
+                                pkgName={typePkg.name}
                                 name={member.name}
                                 since={member.since}
                                 description={member.description}

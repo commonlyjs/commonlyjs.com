@@ -4,6 +4,7 @@ import React from "react"
 
 
 export interface Props {
+    pkgName: string
     name: string
     since: null | string
     description: null | string
@@ -37,6 +38,7 @@ export interface Props {
 }
 
 Snippet.propTypes = {
+    pkgName: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     since: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
@@ -47,7 +49,7 @@ Snippet.propTypes = {
 }
 
 
-function Snippet({ name, since, description, signature, examples, metadata, pkg }: Props) {
+function Snippet({ pkgName, name, since, description, signature, examples, metadata, pkg }: Props) {
     const descriptionTransformed = (description || "")
         .replace(/\{@link (.*)\}/g, (g1, g2) => {
             const [url, name] = g2.split(" | ")
@@ -59,14 +61,15 @@ function Snippet({ name, since, description, signature, examples, metadata, pkg 
             }
         })
 
+    let nameTransformed = name
     if (!!signature.parameters.length) {
-        name = `${name}(${signature.parameters.map(parameter => parameter.name).join()})`
+        nameTransformed = `${name}(${signature.parameters.map(parameter => parameter.name).join()})`
     }
 
     return (
-        <div id={name} className="card snippet">
+        <div id={`${pkgName.split("/")[1]}-${name}`} className="card snippet">
             <div className="header">
-                <div className="title">{name}</div>
+                <div className="title">{nameTransformed}</div>
             </div>
             <div className="content">
                 <p dangerouslySetInnerHTML={{ __html: descriptionTransformed }} />
