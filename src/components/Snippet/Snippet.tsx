@@ -79,7 +79,7 @@ function Snippet({ name, since, description, signature, examples, metadata, pkg 
                         )}
                         </tbody>
                     </table>
-                    <p><small><strong>Returns</strong> ({signature.returnValue.type}) {signature.returnValue.description}</small></p>
+                    <p><small><strong>Returns</strong> <code>({signature.returnValue.type})</code> {signature.returnValue.description}</small></p>
 
                     <h3 className="header">Metadata</h3>
                     <table>
