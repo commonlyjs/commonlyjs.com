@@ -56,8 +56,8 @@ function Snippet({ pkgName, name, since, description, signature, examples, metad
             if (/^http(s?):\/\//.test(url)) {
                 return `<a href="${url}">${name}</a>`
             } else {
-                const [_, member] = url.split(":")
-                return `<a href="#${pkgName.split("/")[1]}-${member}">${name}</a>`
+                const [_pkgName, member] = url.split(":")
+                return `<a href="#${_pkgName.split("/")[1]}-${member}">${name}</a>`
             }
         })
 
