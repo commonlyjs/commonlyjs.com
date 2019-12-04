@@ -32,7 +32,7 @@ function Section({ name, items }: Props) {
         <div className="menu">
           {items.map((item) => (
             <a key={item} className="item"
-               href={`#${item}`}
+               href={`#${name}-${item}`}
                onClick={handleClick}
             >
               {item}
