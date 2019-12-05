@@ -4,6 +4,8 @@ import Section from "../components/Drawer/Section/Section"
 import Layout from "../components/Layout/Layout"
 import Snippet from "../components/Snippet/Snippet"
 
+import functionMembers from "../data/api/function/members.json"
+import functionPkg from "../data/api/function/package.json"
 import mathMembers from "../data/api/math/members.json"
 import mathPkg from "../data/api/math/package.json"
 import reflectMembers from "../data/api/reflect/members.json"
@@ -19,6 +21,10 @@ export default () => {
             <div className="row">
                 <Drawer>
                     <Section
+                        name={functionPkg.name}
+                        items={functionMembers.map(member => member.name)}
+                    />
+                    <Section
                         name={mathPkg.name}
                         items={mathMembers.map(member => member.name)}
                     />
@@ -33,6 +39,21 @@ export default () => {
                 </Drawer>
                 <div className="column">
                     <div className="container">
+                        <h1 className="header">{functionPkg.name}</h1>
+                        <p>{functionPkg.description}</p>
+                        {functionMembers.map((member) =>
+                            <Snippet
+                                key={member.name}
+                                pkgName={functionPkg.name}
+                                name={member.name}
+                                since={member.since}
+                                description={member.description}
+                                signature={member.signature}
+                                examples={member.examples}
+                                metadata={member.metadata}
+                                pkg={functionPkg}
+                            />
+                        )}
                         <h1 className="header">{mathPkg.name}</h1>
                         <p>{mathPkg.description}</p>
                         {mathMembers.map((member) =>

@@ -129,6 +129,64 @@ module.exports = {
             }
         },
 
+        // {
+        //     resolve: 'gatsby-source-apiserver',
+        //     options: {
+        //         url: "https://commonlyjs.com/commonly/packages/number/members.json",
+        //         method: "get",
+        //         headers: {
+        //             "Content-Type": "application/json"
+        //         },
+        //         name: "members",
+        //         localSave: true,
+        //         skipCreateNode: true,
+        //         path: `${__dirname}/src/data/api/number/`,
+        //     }
+        // },
+        // {
+        //     resolve: 'gatsby-source-apiserver',
+        //     options: {
+        //         url: "https://commonlyjs.com/commonly/packages/number/package.json",
+        //         method: "get",
+        //         headers: {
+        //             "Content-Type": "application/json"
+        //         },
+        //         name: "package",
+        //         localSave: true,
+        //         skipCreateNode: true,
+        //         path: `${__dirname}/src/data/api/number/`,
+        //     }
+        // },
+
+        {
+            resolve: 'gatsby-source-apiserver',
+            options: {
+                url: "https://commonlyjs.com/commonly/packages/function/members.json",
+                method: "get",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                name: "members",
+                localSave: true,
+                skipCreateNode: true,
+                path: `${__dirname}/src/data/api/function/`,
+            }
+        },
+        {
+            resolve: 'gatsby-source-apiserver',
+            options: {
+                url: "https://commonlyjs.com/commonly/packages/function/package.json",
+                method: "get",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                name: "package",
+                localSave: true,
+                skipCreateNode: true,
+                path: `${__dirname}/src/data/api/function/`,
+            }
+        },
+
 
         // {
         //     resolve: `gatsby-plugin-json-output`,
