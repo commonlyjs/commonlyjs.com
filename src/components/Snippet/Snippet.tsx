@@ -60,6 +60,12 @@ function Snippet({ pkgName, name, since, description, signature, examples, metad
                 return `<a href="#${_pkgName.split("/")[1]}-${member}">${name}</a>`
             }
         })
+        .replace(/\*\*(.*)\*\*/g, (g1, g2) => {
+            return `<strong>${g2}</strong>`
+        })
+        .replace(/\*(.*)\*/g, (g1, g2) => {
+            return `<em>${g2}</em>`
+        })
 
     let nameTransformed = name
     if (!!signature.parameters.length) {
