@@ -20,6 +20,8 @@ export interface Props {
             name: string
             type: null | string
             description: null | string
+            optional: null | string
+            variadic: null | string
             defaultValue: null | string
         }[]
         returnValue: {
@@ -92,7 +94,7 @@ function Snippet({ pkgName, name, since, description, signature, examples, metad
                 <div className="title">{nameTransformed}</div>
             </div>
             <div className="content">
-                <p dangerouslySetInnerHTML={{ __html: descriptionTransformed }} />
+                <p dangerouslySetInnerHTML={{ __html: descriptionTransformed }}/>
             </div>
             <div className="collapsible">
                 <div className="content">
@@ -112,7 +114,14 @@ function Snippet({ pkgName, name, since, description, signature, examples, metad
                             )}
                             </tbody>
                         </table>
-                        <p><small><strong>Returns</strong>: <code><strong>{signature.returnValue.type}</strong></code> {signature.returnValue.description}</small></p>
+                        <p>
+                            <small>
+                                <strong><code>
+                                    <span className="color-primary">Returns:</span>&nbsp;{signature.returnValue.type}
+                                </code></strong>
+                                &emsp;&ensp;{signature.returnValue.description}
+                            </small>
+                        </p>
                     </>}
 
                     <h3 className="header">Metadata</h3>
