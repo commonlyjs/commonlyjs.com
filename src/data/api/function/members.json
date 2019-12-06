@@ -1,5 +1,45 @@
 [
   {
+    "name": "curry",
+    "since": "1.0.0",
+    "remarks": [],
+    "signature": {
+      "parameters": [
+        {
+          "name": "f",
+          "variadic": false,
+          "defaultValue": null,
+          "optional": false,
+          "description": "is a function to be curried"
+        }
+      ],
+      "typeparameters": [
+        {
+          "name": "TResult",
+          "defaultValue": null,
+          "extends": null
+        },
+        {
+          "name": "TParameters",
+          "defaultValue": null,
+          "extends": null
+        }
+      ],
+      "returnValue": {
+        "type": "Function.Curried",
+        "description": "a curried version of an f function"
+      }
+    },
+    "examples": [
+      "import { curry } from \"@commonly/function\"\r\rconst power = curry(Math.pow)\rpower(2)(3)     // -> 8\r"
+    ],
+    "metadata": {
+      "source": null,
+      "specification": null
+    },
+    "description": "Preforms a {@link https://en.wikipedia.org/wiki/Currying | currying} of an f function."
+  },
+  {
     "name": "negate",
     "since": "1.0.0",
     "remarks": [],
@@ -7,6 +47,9 @@
       "parameters": [
         {
           "name": "predicate",
+          "variadic": false,
+          "defaultValue": null,
+          "optional": false,
           "type": "Predicate",
           "description": "is a predicate function to be negated"
         }
@@ -20,7 +63,7 @@
       ],
       "returnValue": {
         "type": "Predicate",
-        "description": null
+        "description": "a negated version of a predicate function"
       }
     },
     "examples": [
@@ -40,13 +83,16 @@
       "parameters": [
         {
           "name": "_",
+          "variadic": true,
+          "defaultValue": null,
+          "optional": false,
           "description": "is a variadic list of parameters which are unused anyway"
         }
       ],
       "typeparameters": [],
       "returnValue": {
         "type": "undefined",
-        "description": null
+        "description": "an undefined"
       }
     },
     "examples": [
@@ -66,10 +112,16 @@
       "parameters": [
         {
           "name": "f",
+          "variadic": false,
+          "defaultValue": null,
+          "optional": false,
           "description": "is a function to partially apply list of arguments to"
         },
         {
           "name": "applied",
+          "variadic": true,
+          "defaultValue": null,
+          "optional": false,
           "type": "TApplied",
           "description": "is a list of arguments to be prepended to an f function"
         }
@@ -92,7 +144,8 @@
         }
       ],
       "returnValue": {
-        "description": null
+        "type": "Function.Partial",
+        "description": "a partially applied f function"
       }
     },
     "examples": [
@@ -102,6 +155,6 @@
       "source": null,
       "specification": null
     },
-    "description": "Partially applies a list of arguments to an f function."
+    "description": "Partially applies a list of arguments to an f function. It's similar to a\r\n\r{@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind | Function.prototype.bind} method,\r\n  except it preserves *this* context."
   }
 ]

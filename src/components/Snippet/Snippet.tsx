@@ -69,7 +69,21 @@ function Snippet({ pkgName, name, since, description, signature, examples, metad
 
     let nameTransformed = name
     if (!!signature.parameters.length) {
-        nameTransformed = `${name}(${signature.parameters.map(parameter => parameter.name).join()})`
+        const parametersTransformed = signature.parameters.map(parameter => {
+            let parameterName = parameter.name
+            if (parameter.optional) {
+                parameterName = `${parameterName}?`
+            }
+            if (parameter.variadic) {
+                parameterName = `...${parameterName}`
+            }
+            if (parameter.defaultValue) {
+                parameterName = `[${parameterName} = ${parameter.defaultValue}]`
+            }
+            return parameterName
+        })
+        nameTransformed =
+            `${name}(${parametersTransformed.join(", ")})`
     }
 
     return (
@@ -88,7 +102,7 @@ function Snippet({ pkgName, name, since, description, signature, examples, metad
                             <tbody>
                             {signature.parameters.map((parameter) =>
                                 <tr key={parameter.name}>
-                                    <td><code><strong>{parameter.name}: {parameter.type}</strong></code></td>
+                                    <td><code><strong>{parameter.variadic && "..."}{parameter.name}: {parameter.type}</strong></code></td>
                                     <td>
                                         <small>
                                             {parameter.description}
@@ -98,7 +112,7 @@ function Snippet({ pkgName, name, since, description, signature, examples, metad
                             )}
                             </tbody>
                         </table>
-                        <p><small><strong>Returns</strong> <code>({signature.returnValue.type})</code> {signature.returnValue.description}</small></p>
+                        <p><small><strong>Returns</strong>: <code><strong>{signature.returnValue.type}</strong></code> {signature.returnValue.description}</small></p>
                     </>}
 
                     <h3 className="header">Metadata</h3>
