@@ -68,6 +68,10 @@
   //  }
   //}
 
+  .content {
+    white-space: pre-line;
+  }
+  
   .collapsible {
     margin-bottom: 2rem;
   //  //@include scrollbox($color--background);
