@@ -68,7 +68,8 @@
   //  }
   //}
 
-  //.collapsible {
+  .collapsible {
+    margin-bottom: 2rem;
   //  //@include scrollbox($color--background);
   //
   //  flex: 0 0 0;
@@ -81,7 +82,7 @@
   //  transform: translate3d(1, 1, 0);
   //  transition: flex 125ms cubic-bezier(0.645, 0.045, 0.355, 1) 0ms,
   //              opacity 75ms ease-in 75ms;
-  //}
+  }
 
 
   .example {
@@ -92,7 +93,6 @@
     overflow-y: auto;
     max-width: calc(100vw - 1.75rem * 2 * 2);
     min-height: min-content;
-    margin-top: 3rem;
 
     border-bottom-left-radius: inherit;
     border-bottom-right-radius: inherit;
