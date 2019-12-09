@@ -117,7 +117,7 @@ function Snippet({ pkgName, name, since, description, signature, examples, metad
                         <p>
                             <small>
                                 <strong><code>
-                                    <span className="color-primary">Returns:</span>&nbsp;{signature.returnValue.type}
+                                    Returns:&nbsp;{signature.returnValue.type}
                                 </code></strong>
                                 &emsp;&ensp;{signature.returnValue.description}
                             </small>
