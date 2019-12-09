@@ -12,6 +12,8 @@ import mathMembers from "../data/api/math/members.json"
 import mathPkg from "../data/api/math/package.json"
 import reflectMembers from "../data/api/reflect/members.json"
 import reflectPkg from "../data/api/reflect/package.json"
+import transducerMembers from "../data/api/transducer/members.json"
+import transducerPkg from "../data/api/transducer/package.json"
 import typeMembers from "../data/api/type/members.json"
 import typePkg from "../data/api/type/package.json"
 
@@ -37,6 +39,10 @@ export default () => {
                     <Section
                         name={reflectPkg.name}
                         items={reflectMembers.map(member => member.name)}
+                    />
+                    <Section
+                        name={transducerPkg.name}
+                        items={transducerMembers.map(member => member.name)}
                     />
                     <Section
                         name={typePkg.name}
@@ -105,6 +111,21 @@ export default () => {
                                 pkg={reflectPkg}
                             />
                         )}
+                        <h1 className="header">{transducerPkg.name}</h1>
+                        <p>{transducerPkg.description}</p>
+                        {transducerMembers.map((member) =>
+                            <Snippet
+                                key={member.name}
+                                pkgName={transducerPkg.name}
+                                name={member.name}
+                                since={member.since}
+                                description={member.description}
+                                signature={member.signature}
+                                examples={member.examples}
+                                metadata={member.metadata}
+                                pkg={transducerPkg}
+                            />
+                        )}
                         <h1 className="header">{typePkg.name}</h1>
                         <p>{typePkg.description}</p>
                         {typeMembers.map((member) =>
@@ -117,7 +138,7 @@ export default () => {
                                 signature={member.signature}
                                 examples={member.examples}
                                 metadata={member.metadata}
-                                pkg={reflectPkg}
+                                pkg={typePkg}
                             />
                         )}
                     </div>

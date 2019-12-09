@@ -216,6 +216,34 @@ module.exports = {
             }
         },
 
+        {
+            resolve: 'gatsby-source-apiserver',
+            options: {
+                url: "https://commonlyjs.com/commonly/packages/transducer/members.json",
+                method: "get",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                name: "members",
+                localSave: true,
+                skipCreateNode: true,
+                path: `${__dirname}/src/data/api/transducer/`,
+            }
+        },
+        {
+            resolve: 'gatsby-source-apiserver',
+            options: {
+                url: "https://commonlyjs.com/commonly/packages/transducer/package.json",
+                method: "get",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                name: "package",
+                localSave: true,
+                skipCreateNode: true,
+                path: `${__dirname}/src/data/api/transducer/`,
+            }
+        },
 
         // {
         //     resolve: `gatsby-plugin-json-output`,
