@@ -24,7 +24,7 @@
       ],
       "typeparameters": [],
       "returnValue": {
-        "type": null,
+        "type": "number",
         "description": "a sum"
       }
     },
@@ -55,7 +55,7 @@
       "typeparameters": [],
       "returnValue": {
         "type": "number",
-        "description": null
+        "description": "a decremented number by one"
       }
     },
     "examples": [
@@ -92,7 +92,7 @@
       ],
       "typeparameters": [],
       "returnValue": {
-        "type": null,
+        "type": "number",
         "description": "a quotient"
       }
     },
@@ -123,7 +123,7 @@
       "typeparameters": [],
       "returnValue": {
         "type": "number",
-        "description": null
+        "description": "an incremented number by one"
       }
     },
     "examples": [
@@ -153,7 +153,7 @@
       "typeparameters": [],
       "returnValue": {
         "type": "number",
-        "description": null
+        "description": "a maximum of an xs"
       }
     },
     "examples": [
@@ -183,7 +183,7 @@
       "typeparameters": [],
       "returnValue": {
         "type": "number",
-        "description": null
+        "description": "a maximum of an xs"
       }
     },
     "examples": [
@@ -220,7 +220,7 @@
       ],
       "typeparameters": [],
       "returnValue": {
-        "type": null,
+        "type": "number",
         "description": "a product"
       }
     },
@@ -258,7 +258,7 @@
       ],
       "typeparameters": [],
       "returnValue": {
-        "type": null,
+        "type": "number",
         "description": "a difference"
       }
     },

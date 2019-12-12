@@ -1,6 +1,5 @@
 import React from "react"
 import Drawer from "../components/Drawer/Drawer"
-import Section from "../components/Drawer/Section/Section"
 import Layout from "../components/Layout/Layout"
 import Snippet from "../components/Snippet/Snippet"
 
@@ -18,37 +17,20 @@ import typeMembers from "../data/api/type/members.json"
 import typePkg from "../data/api/type/package.json"
 
 
-
 export default () => {
     return <Layout>
         <div className="layout">
             <div className="row">
-                <Drawer>
-                    <Section
-                        name={functionPkg.name}
-                        items={functionMembers.map(member => member.name)}
-                    />
-                    <Section
-                        name={iterablePkg.name}
-                        items={iterableMembers.map(member => member.name)}
-                    />
-                    <Section
-                        name={mathPkg.name}
-                        items={mathMembers.map(member => member.name)}
-                    />
-                    <Section
-                        name={reflectPkg.name}
-                        items={reflectMembers.map(member => member.name)}
-                    />
-                    <Section
-                        name={transducerPkg.name}
-                        items={transducerMembers.map(member => member.name)}
-                    />
-                    <Section
-                        name={typePkg.name}
-                        items={typeMembers.map(member => member.name)}
-                    />
-                </Drawer>
+                <Drawer
+                    items={{
+                        [functionPkg.name]: functionMembers.map(member => member.name),
+                        [iterablePkg.name]: iterableMembers.map(member => member.name),
+                        [mathPkg.name]: mathMembers.map(member => member.name),
+                        [reflectPkg.name]: reflectMembers.map(member => member.name),
+                        [transducerPkg.name]: transducerMembers.map(member => member.name),
+                        [typePkg.name]: typeMembers.map(member => member.name)
+                    }}
+                />
                 <div className="column">
                     <div className="container">
                         <h1 className="header">{functionPkg.name}</h1>

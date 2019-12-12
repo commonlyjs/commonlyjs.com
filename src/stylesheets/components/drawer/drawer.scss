@@ -4,6 +4,8 @@
 
 
 .drawer {
+  min-width: 27rem;
+
   @media only screen and (max-width: $media--tablet) {
     display: block !important;
     position: fixed;

@@ -1,5 +1,44 @@
 [
   {
+    "name": "completing",
+    "since": "1.0.0",
+    "remarks": [],
+    "signature": {
+      "parameters": [
+        {
+          "name": "f",
+          "variadic": false,
+          "defaultValue": null,
+          "optional": false,
+          "type": "TFunction",
+          "description": null
+        }
+      ],
+      "typeparameters": [
+        {
+          "name": "TFunction",
+          "defaultValue": null,
+          "extends": null
+        },
+        {
+          "name": "TProduct",
+          "defaultValue": null,
+          "extends": null
+        }
+      ],
+      "returnValue": {
+        "type": null,
+        "description": null
+      }
+    },
+    "examples": [],
+    "metadata": {
+      "source": null,
+      "specification": null
+    },
+    "description": "[Not yet documented]"
+  },
+  {
     "name": "curry",
     "since": "1.0.0",
     "remarks": [],
@@ -39,6 +78,42 @@
       "specification": null
     },
     "description": "Preforms a {@link https://en.wikipedia.org/wiki/Currying | currying} of an f function."
+  },
+  {
+    "name": "empty",
+    "since": "1.0.0",
+    "remarks": [],
+    "signature": {
+      "parameters": [
+        {
+          "name": "value",
+          "variadic": false,
+          "defaultValue": null,
+          "optional": false,
+          "type": "TValue | ",
+          "description": "is an object to be emptied"
+        }
+      ],
+      "typeparameters": [
+        {
+          "name": "TValue",
+          "defaultValue": null,
+          "extends": null
+        }
+      ],
+      "returnValue": {
+        "type": "TValue",
+        "description": "an empty object of that type"
+      }
+    },
+    "examples": [
+      "import { empty } from \"@commonly/function\"\r\rempty([ 1, 1, 2 ])           // -> []\rempty(\"112\")                 // -> \"\"\rempty({ x: 1, y: 1, z: 2 })  // -> {}\r"
+    ],
+    "metadata": {
+      "source": null,
+      "specification": null
+    },
+    "description": "Creates an empty value of the same type as the one passed in."
   },
   {
     "name": "identity",
@@ -195,5 +270,78 @@
       "specification": null
     },
     "description": "Partially applies a list of arguments to an f function. It's similar to a {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind | Function.prototype.bind} method, except it preserves *this* context."
+  },
+  {
+    "name": "reduced",
+    "since": null,
+    "remarks": [],
+    "signature": {
+      "parameters": [
+        {
+          "name": "value",
+          "variadic": false,
+          "defaultValue": null,
+          "optional": false,
+          "type": "TValue | Reduced",
+          "description": null
+        }
+      ],
+      "typeparameters": [
+        {
+          "name": "TValue",
+          "defaultValue": null,
+          "extends": null
+        }
+      ],
+      "returnValue": {
+        "type": "Reduced",
+        "description": null
+      }
+    },
+    "examples": [],
+    "metadata": {
+      "source": null,
+      "specification": null
+    },
+    "description": "[Not yet documented]"
+  },
+  {
+    "name": "reducer",
+    "since": "1.0.0",
+    "remarks": [],
+    "signature": {
+      "parameters": [
+        {
+          "name": "accumulator",
+          "variadic": false,
+          "defaultValue": null,
+          "optional": false,
+          "type": "TAccumulator",
+          "description": null
+        }
+      ],
+      "typeparameters": [
+        {
+          "name": "TAccumulator",
+          "defaultValue": null,
+          "extends": null
+        },
+        {
+          "name": "TValue",
+          "defaultValue": null,
+          "extends": null
+        }
+      ],
+      "returnValue": {
+        "type": "Reducer",
+        "description": "a reducer"
+      }
+    },
+    "examples": [],
+    "metadata": {
+      "source": null,
+      "specification": null
+    },
+    "description": "Provides a reducing function based on passed in accumulator, if nothing suitable is found, then it returns an identity function."
   }
 ]
