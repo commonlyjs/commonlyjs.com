@@ -1,5 +1,5 @@
 import PropTypes from "prop-types"
-import React, { ReactChild, ReactNode, useRef, useState } from "react"
+import React, { ReactChild, ReactNode, useEffect, useRef, useState } from "react"
 
 
 export interface Props {
@@ -14,7 +14,29 @@ Drawer.propTypes = {
 
 function Drawer({ children, items }: Props) {
     const ref = useRef<HTMLDivElement>(null)
+    const ref2 = useRef<HTMLDivElement>(null)
+    const ref3 = useRef<HTMLDivElement>(null)
     const [searchPhrase, setSearchPhrase] = useState<string>("")
+
+    function handleClickOutside(event: MouseEvent) {
+        const target = event.target as HTMLElement
+        if (ref2.current && !ref2.current.contains(target) && ref3.current && !ref3.current.contains(target)) {
+            const element = ref.current
+            if (element) {
+                element.classList.remove("opened")
+                element.classList.add("closed")
+            }
+        }
+    }
+
+    useEffect(() => {
+        // Bind the event listener
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            // Unbind the event listener on clean up
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    });
 
     const handleClick = () => {
         const element = ref.current
@@ -33,7 +55,7 @@ function Drawer({ children, items }: Props) {
         <>
             <div ref={ref} className="column static mobile-hidden drawer">
                 <div className="sticky">
-                    <div className="card drawer-content" tabIndex={0}>
+                    <div ref={ref2} className="card drawer-content" tabIndex={0}>
                         <div className="header">
                             <div className="input stretched">
                                 <svg xmlns="http://www.w3.org/2000/svg"
@@ -86,7 +108,7 @@ function Drawer({ children, items }: Props) {
                     </div>
                 </div>
             </div>
-            <div className="fab">
+            <div ref={ref3} className="fab">
                 <button className="action" tabIndex={-1}
                         onClick={handleClick}
                 >
@@ -109,5 +131,11 @@ function Drawer({ children, items }: Props) {
     )
 }
 
+function useOutsideAlerter(ref: any) {
+    /**
+     * Alert if clicked on outside of element
+     */
+
+}
 
 export default Drawer
