@@ -1,6 +1,6 @@
 {
   "name": "@commonly/type",
-  "version": "0.1.0-next.67",
+  "version": "0.1.0-next.66",
   "description": "Collection of utility types.",
   "main": "./index.js",
   "types": "./index.d.ts",
@@ -23,7 +23,7 @@
     "**/*.d.ts.map"
   ],
   "author": "Mateusz Pietrzak",
-  "homepage": "https://github.com/commonlyjs/commonly",
+  "homepage": "https://commonlyjs.com",
   "repository": "https://github.com/commonlyjs/commonly",
   "bugs": "https://github.com/commonlyjs/commonly/issues",
   "license": "MIT",
