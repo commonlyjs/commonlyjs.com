@@ -31,14 +31,10 @@ Additionally, we would like to make all of those lowercase so it will blend in w
     <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">"Mail helmet"</span><span class="token punctuation">,</span> defense<span class="token punctuation">:</span> <span class="token number">4</span><span class="token punctuation">,</span> durability<span class="token punctuation">:</span> <span class="token number">0.88</span> <span class="token punctuation">}</span>
 <span class="token punctuation">]</span>
 
-
-<span class="token keyword">const</span> loot <span class="token operator">=</span> carcass<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">n</span> <span class="token operator">=></span> n<span class="token punctuation">.</span>name<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> loot <span class="token operator">=</span> carcass<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=></span> item<span class="token punctuation">.</span>name<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"dev: loot variable"</span><span class="token punctuation">,</span> loot<span class="token punctuation">)</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Sir. Whinealot have looted </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span> loot<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">", "</span><span class="token punctuation">)</span> <span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> from a dead rat.</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
-
-
-
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Sir. Whinealot have looted </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>loot<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">", "</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> from a dead rat.</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
 <span class="token comment">// dev: loot variable</span>
 <span class="token comment">// [</span>
 <span class="token comment">//     "gold coins",</span>
@@ -56,17 +52,13 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">"Mail helmet"</span><span class="token punctuation">,</span> defense<span class="token punctuation">:</span> <span class="token number">4</span><span class="token punctuation">,</span> durability<span class="token punctuation">:</span> <span class="token number">0.88</span> <span class="token punctuation">}</span>
 <span class="token punctuation">]</span>
 
-
 <span class="token keyword">const</span> loot <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> item <span class="token keyword">of</span> carcass<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     loot<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span>
 
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"dev: loot variable"</span><span class="token punctuation">,</span> loot<span class="token punctuation">)</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Sir. Whinealot have looted </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span> loot<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">", "</span><span class="token punctuation">)</span> <span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> from a dead rat.</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
-
-
-
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Sir. Whinealot have looted </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>loot<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">", "</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> from a dead rat.</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
 <span class="token comment">// dev: loot variable</span>
 <span class="token comment">// [</span>
 <span class="token comment">//     "gold coins",</span>
@@ -99,14 +91,10 @@ That's when the <code class="language-text">filter</code> function comes in hand
     <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">"Studded armor"</span><span class="token punctuation">,</span> level<span class="token punctuation">:</span> <span class="token number">9</span> <span class="token punctuation">}</span>
 <span class="token punctuation">]</span>
 
-
-<span class="token keyword">const</span> wearables <span class="token operator">=</span> rucksack<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token parameter">n</span> <span class="token operator">=></span> n<span class="token punctuation">.</span>level <span class="token operator">&lt;=</span> player<span class="token punctuation">.</span>level<span class="token punctuation">)</span>
+<span class="token keyword">const</span> wearables <span class="token operator">=</span> rucksack<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=></span> item<span class="token punctuation">.</span>level <span class="token operator">&lt;=</span> player<span class="token punctuation">.</span>level<span class="token punctuation">)</span>
 
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"dev: wearables variable"</span><span class="token punctuation">,</span> wearables<span class="token punctuation">)</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span> player<span class="token punctuation">.</span>name <span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> can equip </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span> wearables<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">", "</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
-
-
-
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>player<span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> can equip </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>wearables<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">", "</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
 <span class="token comment">// dev: wearables variable</span>
 <span class="token comment">// [</span>
 <span class="token comment">//     { name: "Iron mace", level: 7 },</span>
@@ -134,7 +122,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token punctuation">}</span>
 
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"dev: wearables variable"</span><span class="token punctuation">,</span> wearables<span class="token punctuation">)</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span> player<span class="token punctuation">.</span>name <span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> can equip </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span> wearables<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span> <span class="token string">", "</span> <span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>player<span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> can equip </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>wearables<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span> <span class="token string">", "</span> <span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
 
 
 
@@ -168,14 +156,10 @@ We have to know the worth of knight's equipment and we will achieve that by calc
     <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">"Studded armor"</span><span class="token punctuation">,</span> value<span class="token punctuation">:</span> <span class="token number">9</span> <span class="token punctuation">}</span>
 <span class="token punctuation">]</span>
 
-
-<span class="token keyword">const</span> offer <span class="token operator">=</span> rucksack<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">accumulator<span class="token punctuation">,</span> value</span><span class="token punctuation">)</span> <span class="token operator">=></span> accumulator <span class="token operator">+</span> value<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> offer <span class="token operator">=</span> rucksack<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">accumulator<span class="token punctuation">,</span> item</span><span class="token punctuation">)</span> <span class="token operator">=></span> accumulator <span class="token operator">+</span> item<span class="token punctuation">.</span>value<span class="token punctuation">)</span>
 
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"dev: offer variable"</span><span class="token punctuation">,</span> offer<span class="token punctuation">)</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">The innkeeper can give you </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span> offer <span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> gold coins for your equipment.</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
-
-
-
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">The innkeeper can give you </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>offer<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> gold coins for your equipment.</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
 <span class="token comment">// dev: offer variable</span>
 <span class="token comment">// 31</span>
 
@@ -188,17 +172,13 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">"Studded armor"</span><span class="token punctuation">,</span> value<span class="token punctuation">:</span> <span class="token number">9</span> <span class="token punctuation">}</span>
 <span class="token punctuation">]</span>
 
-
 <span class="token keyword">let</span> offer <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> item <span class="token keyword">of</span> rucksack<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     offer <span class="token operator">=</span> offer <span class="token operator">+</span> item<span class="token punctuation">.</span>value
 <span class="token punctuation">}</span>
 
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"dev: offer variable"</span><span class="token punctuation">,</span> offer<span class="token punctuation">)</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">The innkeeper can give you </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span> offer <span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> gold coins for your equipment.</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
-
-
-
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">The innkeeper can give you </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>offer<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> gold coins for your equipment.</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
 <span class="token comment">// dev: offer variable</span>
 <span class="token comment">// 31</span>
 
@@ -227,7 +207,6 @@ When the purge is over, we will need to sum up our hard-earned experience points
     <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">"Wolf"</span><span class="token punctuation">,</span> type<span class="token punctuation">:</span> <span class="token string">"Animal"</span><span class="token punctuation">,</span> experience<span class="token punctuation">:</span> <span class="token number">25</span><span class="token punctuation">,</span> level<span class="token punctuation">:</span> <span class="token number">4</span> <span class="token punctuation">}</span>
 <span class="token punctuation">]</span>
 
-
 <span class="token keyword">const</span> experience <span class="token operator">=</span>
     creatures
         <span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>isDemon<span class="token punctuation">)</span>
@@ -235,9 +214,7 @@ When the purge is over, we will need to sum up our hard-earned experience points
         <span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span>add<span class="token punctuation">)</span>
 
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"dev: experience variable"</span><span class="token punctuation">,</span> experience<span class="token punctuation">)</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">You've just gained </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span> experience <span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> experience points!</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
-
-
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">You've just gained </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>experience<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> experience points!</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
 <span class="token comment">// dev: experience variable</span>
 <span class="token comment">// 5500</span>
 
