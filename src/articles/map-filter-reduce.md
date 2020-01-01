@@ -52,14 +52,10 @@ const carcass = [
     { name: "Mail helmet", defense: 4, durability: 0.88 }
 ]
 
-
-const loot = carcass.map(n => n.name.toLowerCase())
+const loot = carcass.map(item => item.name.toLowerCase())
 
 console.log("dev: loot variable", loot);
-console.log(`Sir. Whinealot have looted ${ loot.join(", ") } from a dead rat.`)
-
-
-
+console.log(`Sir. Whinealot have looted ${loot.join(", ")} from a dead rat.`)
 // dev: loot variable
 // [
 //     "gold coins",
@@ -80,17 +76,13 @@ const carcass = [
     { name: "Mail helmet", defense: 4, durability: 0.88 }
 ]
 
-
 const loot = [];
 for (const item of carcass) {
     loot.push(item.toLowerCase())
 }
 
 console.log("dev: loot variable", loot)
-console.log(`Sir. Whinealot have looted ${ loot.join(", ") } from a dead rat.`)
-
-
-
+console.log(`Sir. Whinealot have looted ${loot.join(", ")} from a dead rat.`)
 // dev: loot variable
 // [
 //     "gold coins",
@@ -139,14 +131,10 @@ const rucksack = [
     { name: "Studded armor", level: 9 }
 ]
 
-
-const wearables = rucksack.filter(n => n.level <= player.level)
+const wearables = rucksack.filter(item => item.level <= player.level)
 
 console.log("dev: wearables variable", wearables)
-console.log(`${ player.name } can equip ${ wearables.join(", ").toLowerCase() }`)
-
-
-
+console.log(`${player.name} can equip ${wearables.join(", ").toLowerCase()}`)
 // dev: wearables variable
 // [
 //     { name: "Iron mace", level: 7 },
@@ -177,7 +165,7 @@ for (const item of rucksack) {
 }
 
 console.log("dev: wearables variable", wearables)
-console.log(`${ player.name } can equip ${ wearables.join( ", " ).toLowerCase() }`)
+console.log(`${player.name} can equip ${wearables.join( ", " ).toLowerCase()}`)
 
 
 
@@ -226,14 +214,10 @@ const rucksack = [
     { name: "Studded armor", value: 9 }
 ]
 
-
-const offer = rucksack.reduce((accumulator, value) => accumulator + value, 0)
+const offer = rucksack.reduce((accumulator, item) => accumulator + item.value)
 
 console.log("dev: offer variable", offer)
-console.log(`The innkeeper can give you ${ offer } gold coins for your equipment.`)
-
-
-
+console.log(`The innkeeper can give you ${offer} gold coins for your equipment.`)
 // dev: offer variable
 // 31
 
@@ -250,17 +234,13 @@ const rucksack = [
     { name: "Studded armor", value: 9 }
 ]
 
-
 let offer = 0;
 for (const item of rucksack) {
     offer = offer + item.value
 }
 
 console.log("dev: offer variable", offer)
-console.log(`The innkeeper can give you ${ offer } gold coins for your equipment.`)
-
-
-
+console.log(`The innkeeper can give you ${offer} gold coins for your equipment.`)
 // dev: offer variable
 // 31
 
@@ -301,7 +281,6 @@ const creatures = [
     { name: "Wolf", type: "Animal", experience: 25, level: 4 }
 ]
 
-
 const experience =
     creatures
         .filter(isDemon)
@@ -309,9 +288,7 @@ const experience =
         .reduce(add)
 
 console.log("dev: experience variable", experience)
-console.log(`You've just gained ${ experience } experience points!`)
-
-
+console.log(`You've just gained ${experience} experience points!`)
 // dev: experience variable
 // 5500
 
