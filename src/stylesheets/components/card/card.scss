@@ -46,6 +46,18 @@
 
       color: $color--primary;
     }
+
+    .misc {
+      @include typography($font-family--code, $font-size--small);
+      & > * {
+        margin: 0 1rem;
+        color: $color--grey500;
+
+        &:hover {
+          color: $color--black;
+        }
+      }
+    }
   }
 
   .content {

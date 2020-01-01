@@ -81,23 +81,45 @@ function Drawer({ children, items }: Props) {
                             <div className="menu">
                                 {Object.keys(items)
                                     .map((section) => {
-                                        if (items[section].some((item: string) => item.includes(searchPhrase))) {
+                                        if (
+                                            items[section].some((item: string) =>
+                                                (item.toLocaleUpperCase().includes(searchPhrase.toLocaleUpperCase()))
+                                                ||
+                                                (section.toLocaleUpperCase().includes(searchPhrase.toLocaleUpperCase()))
+                                            )
+                                        ) {
+                                          const [start1, end1 = ""] = section.split(new RegExp(searchPhrase || " ", "i"))
+                                          const ii1 = section.indexOf(start1) + start1.length
+                                          const middle1 = section.substring(ii1, section.lastIndexOf(end1) || ii1)
                                           return (
-                                              <div className="item">
+                                              <div key={section} className="item">
                                                 <div className="header">
-                                                  {section}
+                                                    <span>{start1}</span>
+                                                    <span style={{ color: "#00d1b2" }}>{middle1}</span>
+                                                    <span>{end1}</span>
                                                 </div>
                                                 <div className="menu">
                                                   {items[section]
-                                                      .filter((item: string) => item.includes(searchPhrase))
-                                                      .map((item: string) => (
-                                                          <a key={item} className="item"
-                                                             href={`#${section.split("/")[1]}-${item}`}
-                                                             onClick={handleClick}
-                                                          >
-                                                            {item}
-                                                          </a>
-                                                      ))}
+                                                      .filter((item: string) =>
+                                                          (item.toLocaleUpperCase().includes(searchPhrase.toLocaleUpperCase()))
+                                                            ||
+                                                          (section.toLocaleUpperCase().includes(searchPhrase.toLocaleUpperCase()))
+                                                      )
+                                                      .map((item: string) => {
+                                                          const [start, end = ""] = item.split(new RegExp(searchPhrase || " ", "i"))
+                                                          const i1 = item.indexOf(start) + start.length
+                                                          const middle = item.substring(i1, item.lastIndexOf(end) || i1)
+                                                          return (
+                                                              <a key={item} className="item"
+                                                                 href={`#${section.split("/")[1]}-${item}`}
+                                                                 onClick={handleClick}
+                                                              >
+                                                                  <span>{start}</span>
+                                                                  <span style={{ color: "#00d1b2" }}>{middle}</span>
+                                                                  <span>{end}</span>
+                                                              </a>
+                                                          )
+                                                      })}
                                                 </div>
                                               </div>
                                           )

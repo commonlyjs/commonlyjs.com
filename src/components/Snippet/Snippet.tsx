@@ -36,6 +36,7 @@ export interface Props {
     pkg: {
         name: string,
         version: string
+        repository: any
     }
 }
 
@@ -73,6 +74,9 @@ function Snippet({ pkgName, name, since, description, signature, examples, metad
     if (!!signature.parameters.length) {
         const parametersTransformed = signature.parameters.map(parameter => {
             let parameterName = parameter.name
+            if (parameterName === "_") {
+                parameterName = ""
+            }
             if (parameter.optional) {
                 parameterName = `${parameterName}?`
             }
@@ -88,10 +92,17 @@ function Snippet({ pkgName, name, since, description, signature, examples, metad
             `${name}(${parametersTransformed.join(", ")})`
     }
 
+    const fx = (x: string | null) =>
+        `${pkg.repository}/blob/v${pkg.version}/packages/${pkg.name.replace("@commonly/", "")}${x}` || "#"
+
     return (
         <div id={`${pkgName.split("/")[1]}-${name}`} className="card snippet">
             <div className="header">
                 <div className="title">{nameTransformed}</div>
+                <small className="misc">
+                    <a href={fx(metadata.source)}>source</a>
+                    <a href={fx(metadata.specification)}>specification</a>
+                </small>
             </div>
             <div className="content">
                 <p dangerouslySetInnerHTML={{ __html: descriptionTransformed }}/>
@@ -117,7 +128,7 @@ function Snippet({ pkgName, name, since, description, signature, examples, metad
                         <p>
                             <small>
                                 <strong><code>
-                                    Returns:&nbsp;{signature.returnValue.type}
+                                    returns:&nbsp;{signature.returnValue.type}
                                 </code></strong>
                                 &emsp;&ensp;{signature.returnValue.description}
                             </small>
