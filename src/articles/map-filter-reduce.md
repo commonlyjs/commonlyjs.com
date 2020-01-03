@@ -5,7 +5,7 @@ level: 0
 path: "/articles/map-filter-reduce"
 ---
 
-# What's all the fuss about?
+# What's all the hype about?
 
 As you all may know, functional style of programming has gotten really a lot of attention lately. 
 It's happening for several reasons, some of them are supposedly flaws in the object-oriented paradigm highlighted by the programming community.
