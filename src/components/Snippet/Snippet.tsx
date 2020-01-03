@@ -139,6 +139,10 @@ function Snippet({ pkgName, name, since, description, signature, examples, metad
                     <table>
                         <tbody>
                         <tr>
+                            <td><small><strong>package</strong></small></td>
+                            <td><small>{pkg.name}</small></td>
+                        </tr>
+                        <tr>
                             <td><small><strong>version</strong></small></td>
                             <td><small>v{pkg.version}</small></td>
                         </tr>

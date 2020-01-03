@@ -15,7 +15,7 @@ function Navbar({}: Props) {
             const items = ref.current.querySelectorAll<HTMLAnchorElement>(".item:not(.title)")
             for (const item of Array.from(items)) {
                 const href = new URL(item.href)
-                if (href.pathname === window.location.pathname) {
+                if (href.pathname.split("/")[1] === window.location.pathname.split("/")[1]) {
                     item.classList.add("active")
                 }
             }
@@ -32,9 +32,9 @@ function Navbar({}: Props) {
             <a className="item" href="/api/">
                 API Reference
             </a>
-            {/*<a className="item" href="/articles/map-filter-reduce/">*/}
-            {/*    Articles*/}
-            {/*</a>*/}
+            <a className="item" href="/articles/">
+                Articles
+            </a>
 
             <div className="separator"/>
             <a className="item" href="https://github.com/commonlyjs/commonly">

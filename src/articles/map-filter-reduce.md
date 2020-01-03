@@ -1,5 +1,5 @@
 ---
-title:  Map, filter and reduce, the functional way
+title:  Map, filter and reduce
 date: 2019-01-01
 level: 0
 path: "/articles/map-filter-reduce"
@@ -299,4 +299,4 @@ console.log(`You've just gained ${experience} experience points!`)
 I really hope you made it to the end and enjoyed this read.
 
 And as always. 
-When in doubt, visit MDN documentation. ([map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map), [filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter), [reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce).)
+When in doubt, visit MDN documentation ([map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map), [filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter), [reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)).
