@@ -24,7 +24,7 @@ Learning those will help you on with your programming journey.
 
 
 # Array.prototype.map
-This function plays a really big part in a functional paradigm and is perhaps one of the most useful and often used array method in day to day use.
+This function plays a big part in a functional JavaScript and is perhaps one of the most useful and often used array method in day to day use.
 That means, you'll get familiar with it rather pretty quickly.
 
 ```javascript
