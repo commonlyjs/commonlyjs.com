@@ -166,9 +166,6 @@ for (const item of rucksack) {
 
 console.log("dev: wearables variable", wearables)
 console.log(`${player.name} can equip ${wearables.join( ", " ).toLowerCase()}`)
-
-
-
 // dev: wearables variable
 // [
 //     { name: "Iron mace", level: 7 },
